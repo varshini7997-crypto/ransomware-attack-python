@@ -1,0 +1,138 @@
+services:
+  - type: web
+    name: ransomware-simulation
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0
+```
+
+**Save as:** `render.yaml` in your project folder
+
+**IMPORTANT:** When saving:
+- File name: `render.yaml`
+- Save as type: **All Files (*.*)**
+
+---
+
+### **STEP 2: Check Your Folder**
+
+Your folder should now have:
+```
+📁 ransomware-simulation-python/
+   ├── 📄 app.py
+   ├── 📄 requirements.txt
+   └── 📄 render.yaml
+```
+
+---
+
+### **STEP 3: Create GitHub Repository**
+
+Even though you had issues before, Render needs GitHub. Let me help you do it correctly:
+
+1. **Go to:** https://github.com
+2. **Log in** (or sign up if you don't have an account)
+3. Click **"+"** (top right) → **"New repository"**
+
+**Fill in:**
+- **Repository name:** `ransomware-simulation`
+- **Description:** `Educational ransomware simulation dashboard`
+- **Public** ✅ (must be public for free Render)
+- **DON'T** check "Add a README file" (we'll upload files directly)
+- Click **"Create repository"**
+
+---
+
+### **STEP 4: Upload Files to GitHub**
+
+After creating the repository, you'll see a page with instructions. Follow this:
+
+1. **Click "uploading an existing file"** link
+
+   OR
+
+   Click **"Add file"** → **"Upload files"**
+
+2. **Drag and drop these 3 files:**
+   - `app.py`
+   - `requirements.txt`
+   - `render.yaml`
+
+3. **Commit message:** `Initial commit`
+
+4. Click **"Commit changes"**
+
+---
+
+### **STEP 5: Sign Up for Render**
+
+1. **Go to:** https://render.com
+
+2. Click **"Get Started for Free"** or **"Sign Up"**
+
+3. **Choose:** "Sign up with GitHub"
+
+4. **Authorize Render** (click the green button)
+
+---
+
+### **STEP 6: Create New Web Service on Render**
+
+1. **On Render dashboard, click "New +"** (top right)
+
+2. Select **"Web Service"**
+
+3. **Connect your repository:**
+   - You'll see a list of your GitHub repositories
+   - Find `ransomware-simulation`
+   - Click **"Connect"**
+
+---
+
+### **STEP 7: Configure Your Deployment**
+
+Fill in the deployment form:
+
+**Basic Settings:**
+- **Name:** `ransomware-simulation` (or any name you want)
+- **Region:** Choose closest to you (e.g., Oregon, Frankfurt, Singapore)
+- **Branch:** `main`
+- **Runtime:** `Python 3`
+
+**Build & Deploy:**
+- **Build Command:** `pip install -r requirements.txt`
+- **Start Command:** `streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true`
+
+**Instance Type:**
+- Select **"Free"** ✅
+
+---
+
+### **STEP 8: Deploy!**
+
+1. Scroll down and click **"Create Web Service"**
+
+2. **Wait 5-10 minutes** while Render:
+   - Builds your app
+   - Installs dependencies
+   - Starts the server
+
+3. You'll see logs showing the progress
+
+---
+
+### **STEP 9: Get Your Public URL! 🎉**
+
+Once deployment succeeds, you'll see:
+- ✅ **"Live"** status (green)
+- 🔗 **Your URL:** `https://ransomware-simulation-xyz.onrender.com`
+
+**Click the URL to test your app!**
+
+---
+
+## **COMPLETE FILE CONTENTS (Copy-Paste Ready)**
+
+### **📄 requirements.txt**
+```
+streamlit
